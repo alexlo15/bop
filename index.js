@@ -26,7 +26,7 @@ app.get('/', (req, res) => {
 app.post('/addUser',async (req, res) => {
     let collection = await db.collection("users");
     let newDocument = req.body;
-    newDocument.date = new Date();
+    newDocument.date = new Date();  
     let result = await collection.insertOne(newDocument);
     console.log("rreq"+req.body);
     res.send(result).status(204);
